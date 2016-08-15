@@ -1,0 +1,29 @@
+#!/usr/bin/python
+import cgi,cgitb
+import MySQLdb
+import json
+cgitb.enable()
+import base64
+from Crypto.Cipher import AES
+key=AES.new("explora123456789")
+print "Content-Type: text/html\n"
+fs=cgi.FieldStorage()
+newpwd=fs.getvalue("newpwd")
+oldpwd=fs.getvalue("oldpwd")
+token=fs.getvalue("token")
+recv=base64.decodestring(token)
+email=key.decrypt(recv)
+email=email.strip()
+email=email.replace("(","").replace(")","")
+db=MySQLdb.connect("localhost","root","1","project_analyser");
+con=db.cursor()
+sql="SELECT `Faculty_pwd` from `faculty` where `Faculty_Mail`='%s';"%(str(email))
+con.execute(sql)
+res=con.fetchone()
+if str(res[0])==oldpwd:
+	sql1="UPDATE `faculty` SET `Faculty_pwd`='%s' WHERE `Faculty_Mail`='%s';"%(str(newpwd),str(email))
+	con.execute(sql1)
+	db.commit()
+	print "<p style='font-size: 18px;color:green;'>Your Password was Changed Successfully!!</p>"
+else:
+	print "<p style='font-size: 18px; color:red;'>Authentication Failure!! Please Try Again!!</p>"

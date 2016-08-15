@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Explora, SRM University</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    <link rel="stylesheet" href="../../Ravalic/style.css" type="text/css">
+	<link href="../../Ravalic/css/lightbox.css" rel="stylesheet">
+	<link href='../../Ravalic/css/font1.css' rel='stylesheet' type='text/css'>
+	<link href='../../Ravalic/css/font2.css' rel='stylesheet' type='text/css'>
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="../js/projectupload.js"></script>
+    <style>
+    	.label{
+    		white-space:normal; !important
+    	}
+		.tag {
+		  font-size: 14px;
+		  float:left;
+		  /*padding: .3em .4em .4em;*/
+		  margin: 0.2em;
+		}
+		.tag a {
+		  color: #5cb85c;
+		  cursor: pointer;
+		  opacity: 0.6;
+		}
+		.tag a:hover {
+		  opacity: 1.0
+		}
+		.tag .remove {
+		  vertical-align: bottom;
+		  top: 0;
+		}
+		.tag a {
+		  margin: 0 0 0 .3em;
+		}
+		.tag a .glyphicon-white {
+		  color: #fff;
+		  margin-bottom: 2px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="container" style="background:#212A3F; width:100%;">
+		<div class="row">
+			<div class="col-md-4 ">
+				<div class="navbar-header">
+					    <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar">
+					        <span class="glyphicon glyphicon-align-justify"></span>
+					    </button>
+      					<a class="navbar-brand logo" href="../../Ravalic/index.html" style="color:red;">Explora</a>
+    			</div>
+			</div>
+			<div class="col-md-8">
+				<nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+					<ul class="nav navbar-nav navbar-right menu">
+							<li><a href="../../Ravalic/index.html" class="page-scroll">Home</a></li>
+							<li><a href="../pages/search.html" class="page-scroll">Search</a></li>
+							<li><a href="../pages/myform.html" class="page-scroll">Project Upload</a></li>
+							<li><a href="../pages/loginfaculty.html" class="page-scroll">Faculty Login</a></li>
+							<!--li><a href="#section4" class="page-scroll">Contact</a></li-->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	</header>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><b>Submit</b></h2>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 18px;">Your Project Has Been Successfully Submitted.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" id="close">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	<div class="row">
+	<div class="col-lg-12">
+	<h1 class="page-header"><center>Upload Your Project Details</center></h1>
+	</div>
+	</div>
+	<div class="panel-body">
+	<form autocomplete="off" method="POST" id="validate">
+		<div class="form-group">
+		<label>Project Title</label><span id="titleerror" autofocus></span>
+		<input class="form-control" id="title">
+		</div>
+		
+		<div class="form-group">
+		<label>Domain</label><span id="domainerror" autofocus></span>
+		<input class="form-control" id="domain">
+		</div>
+		
+		<div class="form-group">
+		<label>One Line Description to Describe About your Project</label><span id="descerror" autofocus></span>
+		<input class="form-control" id="description">
+		</div>
+		
+		<div class="form-group">
+		<label>Abstract</label><span id=abserror autofocus></span>
+		<textarea class="form-control" rows="3" id="abstract"></textarea>
+		</div>
+		
+		<div class="form-group" >
+		<label>Guide/Faculty Name</label><span id="facultyerror" autofocus></span>
+		<select class="form-control" id="faculty">
+		</select>
+		</div>
+		<br>
+		
+		<div class="form-group" id="team-mem">
+		<label>Project Team Members Details</label><span id="teammemerror" autofocus></span>
+		<input class="form-control" id="teammem">
+		</div>
+		
+		<div class="form-group">
+		<label>Contact Details of Team-Leader</label>
+		<input placeholder="Email ID" id="email" type="email" >
+		<input placeholder="Mobile Number" id="mobile" >
+		<p id="contacterror" autofocus></p>
+		</div>
+		<div id="tags">
+			<p><center>Please Click on Create Tags button so that analysis of your project can begin</center></p>
+			<center><button class="btn btn-default btn-lg btn-success" id="tagbtn">Create Tags</button></center>
+		</div>
+	</form>
+	</div>
+	<div id="msg">
+		<p><center>All the information provided is correct and any incorrect information may lead to termination of project</center></p>
+		<center><button type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-default btn-lg btn-success submit-btn" id="submit-button">Submit</button></center>
+	</div>
+	</div>
+</body>
+</html>

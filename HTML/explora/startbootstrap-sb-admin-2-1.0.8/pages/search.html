@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Explora, SRM University</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+        <link rel="stylesheet" href="../../Ravalic/style.css" type="text/css">
+	<link href="../../Ravalic/css/lightbox.css" rel="stylesheet">
+	<link href='../../Ravalic/css/font1.css' rel='stylesheet' type='text/css'>
+	<link href='../../Ravalic/css/font2.css' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    
+    <script src="../js/search.js"></script>
+<style>
+#imaginary_container{
+    margin-top:20%; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.myclass{
+	top:50px;
+}
+.myclass1{
+	top:60px;
+	white-space:nowrap; !important;
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+	height:60px; !important;
+	font-size:20px;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+    height:45px;
+}
+</style>
+</head>
+
+<body>
+	<header>
+		<div class="container" style="background:#212A3F; width:100%;">
+		<div class="row">
+			<div class="col-md-4 ">
+				<div class="navbar-header">
+					    <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar">
+					        <span class="glyphicon glyphicon-align-justify"></span>
+					    </button>
+      					<a class="navbar-brand logo" href="../../Ravalic/index.html" style="color:red;">Explora</a>
+    			</div>
+			</div>
+			<div class="col-md-8">
+				<nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+					<ul class="nav navbar-nav navbar-right menu">
+							<li><a href="../../Ravalic/index.html" class="page-scroll">Home</a></li>
+							<li><a href="../pages/search.html" class="page-scroll">Search</a></li>
+							<li><a href="../pages/myform.html" class="page-scroll">Project Upload</a></li>
+							<li><a href="../pages/loginfaculty.html" class="page-scroll">Faculty Login</a></li>
+							<!--li><a href="#section4" class="page-scroll">Contact</a></li-->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+		<div class="container">
+		
+	<form id="validate" autocomplete="off">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="input-group stylish-input-group myclass">
+                    <input type="text" class="form-control"  placeholder="Search" id="search-box" >
+                    <span class="input-group-addon">
+                        <button type="submit" id="search-btn">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                    
+                </div>
+                </div>
+                <div class="col-sm-6 col-sm-offset-3 myclass1">
+                 <label class="checkbox-inline"><input type="radio" value="1" checked="checked" name="stype"><b>  Title</b></label>
+				<label class="checkbox-inline"><input type="radio" value="2" name="stype"><b>  Domain</b></label>
+				<label class="checkbox-inline"><input type="radio" value="3" name="stype"><b>  Faculty Member</b></label>
+				<label class="checkbox-inline"><input type="radio" value="4" name="stype"><b>  Keywords </b></label>
+				<label class="checkbox-inline"><input type="radio" value="5" name="stype"><b>  Similar Projects</b></label>
+				</div>
+	</form>
+</div>
+
+        </header>
+        
+	<section>
+	<div class="search heading">
+	<div class="sresults-body" id="sbody">
+		<h2 class="result-heading">Search results</h2>
+		<div id="sbody">
+		<!--div class="sresults">
+			<a href=""><h2><b>Result 1</b></h2></a>
+			<p class="domain">Domain 1</p>
+			<p class="pdescription">Description 1 </p>
+		</div>
+		<div class="sresults">
+			<a href=""><h2><b>Result 1</b></h2></a>
+			<p class="domain">Domain 1</p>
+			<p class="pdescription">Description 1 </p>
+		</div>
+		<div class="sresults">
+			<a href=""><h2><b>Result 1</b></h2></a>
+			<p class="domain">Domain 1</p>
+			<p class="pdescription">Description 1 </p>
+		</div-->
+		</div>
+	</div>
+	</section>
+</body>
+</html>

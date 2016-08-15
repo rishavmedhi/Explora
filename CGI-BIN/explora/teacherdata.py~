@@ -1,0 +1,19 @@
+#!/usr/bin/python
+import cgi,cgitb
+import MySQLdb
+import json
+cgitb.enable()
+print "Content Type: text/html\n"
+
+#MySQL connection
+db=MySQLdb.connect("localhost","root","1","project_analyser")
+cursor=db.cursor(MySQLdb.cursors.DictCursor)
+
+teacherlist=[]
+sql="SELECT  `Faculty_Name` FROM  `faculty`;"
+res=cursor.execute(sql)
+for row in cursor:
+	teacherlist.append(row["Faculty_Name"]) 
+
+retdata={"teachers":teacherlist}
+print json.dumps(retdata)

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+        <link rel="stylesheet" href="../../Ravalic/style.css" type="text/css">
+	<link href="../../Ravalic/css/lightbox.css" rel="stylesheet">
+	<link href='../../Ravalic/css/font1.css' rel='stylesheet' type='text/css'>
+	<link href='../../Ravalic/css/font2.css' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    
+    <script src="../js/faculty.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="container" style="background:#212A3F; width:100%;">
+		<div class="row">
+			<div class="col-md-4 ">
+				<div class="navbar-header">
+					    <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar">
+					        <span class="glyphicon glyphicon-align-justify"></span>
+					    </button>
+      					<a class="navbar-brand logo" href="../../Ravalic/index.html" style="color:red;">Explora</a>
+    			</div>
+			</div>
+			<div class="col-md-8">
+				<nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+					<ul class="nav navbar-nav navbar-right menu">
+							<li><a href="../../Ravalic/index.html" class="page-scroll">Home</a></li>
+							<li><a href="../pages/search.html" class="page-scroll">Search</a></li>
+							<li><a href="../pages/myform.html" class="page-scroll">Project Upload</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#myModal1" class="page-scroll">Change Password</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#myModal" class="page-scroll active" id="signout">Sign Out</a></li>
+							<!--li><a href="#section4" class="page-scroll">Contact</a></li-->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><b>Sign Out</b></h2>
+        </div>
+        <div class="modal-body">
+          <p style="font-size: 18px;">You have been Successfully Signed Out!!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" id="close">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal 1-->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><b>Change Password</b></h2>
+        </div>
+        <div class="modal-body" id="msg">
+          <p style="font-size: 18px;"><b>Old Password:  </b><input type="password" id="oldpwd" required></p>
+          <p style="font-size: 18px;"><b>New Password:  </b><input type="password" id="newpwd" required></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="changepwd">Change Password</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--Modal 2-->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><b>Update Status</b></h2>
+        </div>
+        <div class="modal-body" id="msg1">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" id="changestatus">Change Status</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+	<div class="container">
+			<h2 id="name"></h2>
+			<p style="font-size: 14px;line-height: 1.42857143;color: #333;" id="email"></p>
+			<hr style="margin-top:20px; margin-bottom:20px;background-color:black;border-top:1px solid;color:black;height:1px;"></hr>
+		<p style="font-size: 18px;line-height: 1.42857143;color: #333;" id="pc"></p>
+<table class="table table-striped ">
+  <thead>
+    <tr class="table-success" id="tab">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Domain</th>
+      <th>Lead Mail</th>
+      <th>Lead Mobile</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id=tabbody>
+  </tbody>
+</table>
+	</div>
+	</header>
+</body>
+</html>
