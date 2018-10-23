@@ -2,6 +2,11 @@
 A web based application that analyses college projects using text mining concepts
 This application is created for colleges and universities where one keep a 'one-stop' record for all research projects and students and faculty can search the projects present in the database
 
+#Technologies Used
+- Frontend : HTML, CSS, jQuery
+- Backend : Python CGI
+- Database : MySQL
+
 ## Project Upload
 It allows users to store their project details in the application database by filling out a form.The user then has to enter project details.
 The application analyses the title and abstract of the project, from where key word extraction module identifies the important keywords and displays it to the user from where the user can select the appropriate ones. Finally the user can submit the project to the application
